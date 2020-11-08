@@ -1,0 +1,2 @@
+module OutgoinginvoicesHelper
+end

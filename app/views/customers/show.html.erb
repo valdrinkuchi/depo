@@ -1,0 +1,27 @@
+<div class="page-header">
+  <%= link_to customers_path, class: 'btn btn-default' do %>
+    All Customers
+  <% end %>
+  <%= link_to edit_customer_path(@customer), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show customer</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Name:</dt>
+  <dd><%= @customer.name %></dd>
+
+  <dt>Email:</dt>
+  <dd><%= @customer.email %></dd>
+
+  <dt>Tel:</dt>
+  <dd><%= @customer.tel %></dd>
+
+  <dt>Address:</dt>
+  <dd><%= @customer.address %></dd>
+
+  <dt>Customercategory:</dt>
+  <dd><%= @customer.customercategory %></dd>
+
+</dl>

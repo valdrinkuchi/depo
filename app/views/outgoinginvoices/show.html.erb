@@ -1,0 +1,21 @@
+<div class="page-header">
+  <%= link_to outgoinginvoices_path, class: 'btn btn-default' do %>
+    All Outgoinginvoices
+  <% end %>
+  <%= link_to edit_outgoinginvoice_path(@outgoinginvoice), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show outgoinginvoice</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Number:</dt>
+  <dd><%= @outgoinginvoice.number %></dd>
+
+  <dt>Date:</dt>
+  <dd><%= @outgoinginvoice.date %></dd>
+
+  <dt>Customer:</dt>
+  <dd><%= @outgoinginvoice.customer %></dd>
+
+</dl>

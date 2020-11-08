@@ -8,4 +8,12 @@ class User < ApplicationRecord
 
   has_many :notifications, as: :recipient
   has_many :services
+  has_many :outgoinginvoices
+  has_many :incoming_invoices
+  has_many :payments
+  has_many :customers
+  has_many :payments
+  has_many :suppliers
+  has_many :brands
+  has_many :documents
 end

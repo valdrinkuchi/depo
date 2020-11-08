@@ -1,0 +1,24 @@
+<div class="page-header">
+  <%= link_to incominginvoices_path, class: 'btn btn-default' do %>
+    All Incominginvoices
+  <% end %>
+  <%= link_to edit_incominginvoice_path(@incominginvoice), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show incominginvoice</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Number:</dt>
+  <dd><%= @incominginvoice.number %></dd>
+
+  <dt>Date:</dt>
+  <dd><%= @incominginvoice.date %></dd>
+
+  <dt>Supplier:</dt>
+  <dd><%= @incominginvoice.supplier %></dd>
+
+  <dt>Amount:</dt>
+  <dd><%= @incominginvoice.amount %></dd>
+
+</dl>

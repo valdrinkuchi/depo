@@ -1,0 +1,34 @@
+<%= form_with(model: customercategory, local: true) do |form| %>
+  <% if customercategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customercategory.errors.count, "error") %> prohibited this customercategory from being saved:</h2>
+
+      <ul>
+      <% customercategory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :type %>
+    <%= form.text_field :type, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <% if customercategory.persisted? %>
+      <div class="float-right">
+        <%= link_to 'Destroy', customercategory, method: :delete, class: "text-danger", data: { confirm: 'Are you sure?' } %>
+      </div>
+    <% end %>
+
+    <%= form.submit class: 'btn btn-primary' %>
+
+    <% if customercategory.persisted? %>
+      <%= link_to "Cancel", customercategory, class: "btn btn-link" %>
+    <% else %>
+      <%= link_to "Cancel", customercategories_path, class: "btn btn-link" %>
+    <% end %>
+  </div>
+<% end %>

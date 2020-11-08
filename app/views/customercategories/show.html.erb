@@ -1,0 +1,15 @@
+<div class="page-header">
+  <%= link_to customercategories_path, class: 'btn btn-default' do %>
+    All Customercategories
+  <% end %>
+  <%= link_to edit_customercategory_path(@customercategory), class: 'btn btn-primary' do %>
+    Edit
+  <% end %>
+  <h1>Show customercategory</h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt>Type:</dt>
+  <dd><%= @customercategory.type %></dd>
+
+</dl>
