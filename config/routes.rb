@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :brands
   resources :productcategories
   resources :suppliers
+
   namespace :admin do
     resources :users
     resources :services
@@ -18,8 +19,10 @@ Rails.application.routes.draw do
     resources :notifications
     root to: 'users#index' # <--- Root route
   end
+
   get '/privacy', to: 'home#privacy'
   get '/terms', to: 'home#terms'
+
   authenticate :user, ->(u) { u.admin? } do
     mount Sidekiq::Web => '/sidekiq'
   end
