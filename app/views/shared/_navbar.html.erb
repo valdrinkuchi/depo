@@ -12,6 +12,23 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMain" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Navigate
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <%= link_to "Customers", customers_path, {class: "dropdown-item"}%>
+                <%= link_to "Suppliers", suppliers_path, {class: "dropdown-item"}%>
+                <%= link_to "Products", products_path, {class: "dropdown-item"}%>
+                <%= link_to "Brands", brands_path, {class: "dropdown-item"}%>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Reports</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Accounting</a>
+              </div>
+            </li>
+          </ul>
 
     <div class="collapse navbar-collapse" id="navbarMain">
       <ul class="navbar-nav mr-auto mt-2 mt-md-0">

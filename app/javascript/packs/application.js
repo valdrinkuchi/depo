@@ -21,3 +21,16 @@ $(document).on("page:load", () => {
   $('[data-toggle="popover"]').popover()
   console.log("It works on each visit!")
 });
+
+$(function() {
+  var eventFired = function ( type ) {
+      let n = $('#table-responsive');
+      n.scrollTop = n.scrollHeight;      
+    }
+
+  $('#example')
+      .on( 'order.dt',  function () { eventFired( 'Order' ); } )
+      .on( 'search.dt', function () { eventFired( 'Search' ); } )
+      .on( 'page.dt',   function () { eventFired( 'Page' ); } )
+      .DataTable();
+});

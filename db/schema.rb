@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_08_191559) do
+ActiveRecord::Schema.define(version: 2020_11_10_204419) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -138,6 +138,17 @@ ActiveRecord::Schema.define(version: 2020_11_08_191559) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "products", force: :cascade do |t|
+    t.string "description"
+    t.string "unit"
+    t.decimal "unit_price"
+    t.integer "count"
+    t.decimal "retail_price"
+    t.string "dimensions"
+    t.integer "productcategory_id", null: false
+    t.index ["productcategory_id"], name: "index_products_on_productcategory_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "provider"
@@ -190,6 +201,7 @@ ActiveRecord::Schema.define(version: 2020_11_08_191559) do
   add_foreign_key "payments", "incominginvoices"
   add_foreign_key "payments", "paymenttypes"
   add_foreign_key "payments", "users"
+  add_foreign_key "products", "productcategories"
   add_foreign_key "services", "users"
   add_foreign_key "suppliers", "users"
 end
