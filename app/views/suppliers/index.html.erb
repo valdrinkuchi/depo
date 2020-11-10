@@ -42,3 +42,17 @@
     </tbody>
   </table>
 </div>
+<script>
+$(function() {
+  var eventFired = function ( type ) {
+      let n = $('#table-responsive');
+      n.scrollTop = n.scrollHeight;      
+    }
+
+  $('#example')
+      .on( 'order.dt',  function () { eventFired( 'Order' ); } )
+      .on( 'search.dt', function () { eventFired( 'Search' ); } )
+      .on( 'page.dt',   function () { eventFired( 'Page' ); } )
+      .DataTable();
+});
+</script>

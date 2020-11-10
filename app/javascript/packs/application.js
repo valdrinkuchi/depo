@@ -4,10 +4,11 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("local-time").start()
+
 window.Rails = Rails
 
 import 'bootstrap'
@@ -15,20 +16,8 @@ import 'data-confirm-modal'
 window.jQuery = $;
 window.$ = $;
 
-$(document).on("turbolinks:load", () => {
+$(document).on("page:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
   $('[data-toggle="popover"]').popover()
-});
-
-$(function() {
-  var eventFired = function ( type ) {
-      let n = $('#table-responsive');
-      n.scrollTop = n.scrollHeight;      
-    }
-
-  $('#example')
-      .on( 'order.dt',  function () { eventFired( 'Order' ); } )
-      .on( 'search.dt', function () { eventFired( 'Search' ); } )
-      .on( 'page.dt',   function () { eventFired( 'Page' ); } )
-      .DataTable();
+  console.log("It works on each visit!")
 });
